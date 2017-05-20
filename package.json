@@ -1,0 +1,27 @@
+{
+  "name": "fooll-cli",
+  "version": "0.0.5",
+  "description": "Fooll cli tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "fooll": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:fooll/fooll-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fooll/fooll-cli/issues"
+  },
+  "homepage": "https://github.com/fooll/fooll-cli#readme",
+  "dependencies": {
+    "capitalize": "^1.0.0",
+    "commander": "^2.9.0",
+    "string-template": "^1.0.0"
+  }
+}
