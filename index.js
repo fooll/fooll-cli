@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const program = require('commander');
 const execSync = require('child_process').execSync;
 const fs = require('fs');
@@ -17,7 +18,7 @@ if (program.app_module) {
   var moduleName = program.app_module;
   console.log('Generating app module:', moduleName);
   if (!fs.existsSync('app_modules')) {
-    execSync('mkdir app_modules/');
+    fs.mkdirSync('app_modules/');
   }
   var modulePath = 'app_modules/' + moduleName + '/';
   createDirectory(modulePath);
@@ -61,7 +62,7 @@ function getTemplate(component) {
 
 function createDirectory(directory) {
   if (!fs.existsSync(directory)) {
-    execSync('mkdir ' + directory);
+    fs.mkdirSync(directory);
   } else {
     console.error('Error: Directory %s already exists', directory);
   }
@@ -72,11 +73,14 @@ function createCompos(components, folderPath, templateData) {
     var componentPath = folderPath + component;
     var command = /\w+\.\w+/g.test(component) ? 'touch' : 'mkdir';
     var template = getTemplate(component);
+    var content = "";
     if (template) {
-      var content = format(template, templateData);
+      content = format(template, templateData);
+    }
+    if (/\w+\.\w+/g.test(component)) {
       fs.writeFileSync(componentPath, content, 'utf-8');
     } else {
-      execSync(command + ' ' + componentPath);
+      fs.mkdirSync(componentPath);
     }
   });
 }
