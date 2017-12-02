@@ -1,7 +1,7 @@
 {
-  "name": "fooll-cli",
+  "name": "zinky-cli",
   "version": "0.0.6",
-  "description": "Fooll cli tools",
+  "description": "ZinkyJS cli tools",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:fooll/fooll-cli.git"
+    "url": "git+ssh://git@github.com:zinkyjs/zinky-cli.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fooll/fooll-cli/issues"
+    "url": "https://github.com/zinkyjs/zinky-cli/issues"
   },
-  "homepage": "https://github.com/fooll/fooll-cli#readme",
+  "homepage": "https://github.com/zinkyjs/zinky-cli#readme",
   "dependencies": {
     "capitalize": "^1.0.0",
     "commander": "^2.9.0",

@@ -10,8 +10,8 @@ const path = require('path');
 
 program
   .version('0.0.1')
-  .option('-M, --app_module [name]', 'Generate Fooll module [name]')
-  .option('-a, --create_app [name]', 'Generate Fooll application [name]')
+  .option('-M, --app_module [name]', 'Generate Zinky module [name]')
+  .option('-a, --create_app [name]', 'Generate Zinky application [name]')
   .parse(process.argv);
 
 if (program.app_module) {
