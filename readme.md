@@ -1,28 +1,27 @@
-# Fooll-cli
-Command line tools for [Fooll framework](https://github.com/fooll/fooll)
+# Zinky-cli
+Command line tools for [Zinky framework](https://github.com/zinkyjs/zinky)
 
 ## Installation
 ```
-sudo npm i -g fooll-cli
+sudo npm i -g zinky-cli
 ```
 
 ## API
 
 ### Generate application boilerplate
 ```
-fooll -a appName
+zinky -a appName
 ```
 **Or**, the long version:
 ```
-fooll --create_app appName
+zinky --create_app appName
 ```
 
 ### Create application module
 ```
-fooll -M moduleName
+zinky -M moduleName
 ```
 **Or**, the long version:
 ```
-fooll --app_module moduleName
+zinky --app_module moduleName
 ```
-
