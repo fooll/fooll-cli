@@ -1,4 +1,4 @@
-const Zinko = require('Zinko');
+const Zinko = require('zinko');
 
 class {name} extends Zinko {
 
