@@ -1,5 +1,5 @@
-const Fooll = require('fooll');
+const Zinky = require('zinky');
 
-var server = new Fooll({});
+var server = new Zinky({});
 
 server.listen();
