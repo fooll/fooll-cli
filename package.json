@@ -1,6 +1,6 @@
 {
   "name": "zinky-cli",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "ZinkyJS cli tools",
   "main": "index.js",
   "scripts": {
