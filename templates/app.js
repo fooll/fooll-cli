@@ -1,5 +1,5 @@
 const Zinky = require('zinky');
 
-var server = new Zinky({});
+var app = new Zinky({});
 
-server.listen();
+app.listen();
