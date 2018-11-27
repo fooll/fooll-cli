@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const execSync = require('child_process').execSync;
 const fs = require('fs');
 const format = require("string-template");
 const capitalize = require("capitalize");
 const path = require('path');
+const npm = require("npm");
 
 
 program
   .version('0.0.1')
   .option('-M, --app_module [name]', 'Generate Zinky module [name]')
   .option('-a, --create_app [name]', 'Generate Zinky application [name]')
+  .option('-i, --install [name]', 'Install Zinky Module [name]')
   .parse(process.argv);
 
 if (program.app_module) {
@@ -49,6 +50,24 @@ if (program.create_app) {
   ];
   createCompos(appComponents, appPath, templateData);
   console.log('Application %s generated', appName);
+}
+
+if (program.install) {
+  let pkgName = program.install;
+  npm.load(function (err) {
+    npm.commands.install([pkgName], (err, data) => {
+      if (err) return console.error(err);
+      let oldPath = `node_modules/${pkgName}`;
+      let newPath = `app_modules/${pkgName}`
+      fs.renameSync(oldPath, newPath);
+      fs.unlinkSync(newPath + "/package.json");
+    })
+
+    npm.on('log', function (message) {
+      console.log(message);
+    });
+  });
+
 }
 
 function getTemplate(component) {
