@@ -57,10 +57,14 @@ if (program.install) {
   npm.load(function (err) {
     npm.commands.install([pkgName], (err, data) => {
       if (err) return console.error(err);
+      createDirectory("app_modules");
       let oldPath = `node_modules/${pkgName}`;
       let newPath = `app_modules/${pkgName}`
       fs.renameSync(oldPath, newPath);
       fs.unlinkSync(newPath + "/package.json");
+      var pkgJson = JSON.parse(fs.readFileSync("package.json"));
+      delete pkgJson.dependencies[pkgName];
+      fs.writeFileSync("package.json", JSON.stringify(pkgJson, null, 2));
     })
 
     npm.on('log', function (message) {
