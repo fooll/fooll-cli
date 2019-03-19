@@ -10,7 +10,7 @@ sudo npm i -g zinky-cli
 
 ### Generate application boilerplate
 ```
-zinky -a appName
+zinky -a <appName>
 ```
 **Or**, the long version:
 ```
@@ -19,9 +19,14 @@ zinky --create_app appName
 
 ### Create application module
 ```
-zinky -M moduleName
+zinky -M <moduleName>
 ```
 **Or**, the long version:
 ```
 zinky --app_module moduleName
+```
+
+### Install ZinkyJS module
+```
+zinky -i <moduleName>
 ```
