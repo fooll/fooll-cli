@@ -14,7 +14,7 @@ zinky -a <appName>
 ```
 **Or**, the long version:
 ```
-zinky --create_app appName
+zinky --create_app <appName>
 ```
 
 ### Create application module
@@ -23,7 +23,7 @@ zinky -M <moduleName>
 ```
 **Or**, the long version:
 ```
-zinky --app_module moduleName
+zinky --app_module <moduleName>
 ```
 
 ### Install ZinkyJS module
